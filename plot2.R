@@ -21,8 +21,8 @@ colnames(epc.data)    <- c('Date', 'Time', 'Global_active_power', 'Global_reacti
 ## Make the date and time a new column with date and time together
 epc.data              <- cbind(epc.data, observation.date = strptime(paste(epc.data[, "Date"], epc.data[, "Time"]), format = "%d/%m/%Y %H:%M:%S"))
 
-#Create Histogram of Global_active_power data
-hist(epc.data[, "Global_active_power"], xlab = "Global Active Power (kilowatts)", main = "Global Active Power", col = "red")
+#Create line chart of Global_active_power data vs. date
+plot(epc.data[, "observation.date"], epc.data[, "Global_active_power"], xlab = "", ylab = "Global Active Power (kilowatts)", type = "l")
 
 #write the file plot1.png
 dev.copy(device = png, "plot1.png", width = 480, height = 480)
