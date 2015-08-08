@@ -25,5 +25,5 @@ epc.data              <- cbind(epc.data, observation.date = strptime(paste(epc.d
 plot(epc.data[, "observation.date"], epc.data[, "Global_active_power"], xlab = "", ylab = "Global Active Power (kilowatts)", type = "l")
 
 #write the file plot1.png
-dev.copy(device = png, "plot1.png", width = 480, height = 480)
+dev.copy(device = png, "plot2.png", width = 480, height = 480)
 dev.off()
